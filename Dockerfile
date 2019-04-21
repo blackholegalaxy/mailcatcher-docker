@@ -1,4 +1,4 @@
-FROM ruby:2.4-alpine3.7
+FROM ruby:2.6-alpine3.8
 
 LABEL maintainer="blackholegalaxy"
 
@@ -9,7 +9,7 @@ RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         sqlite-dev \
-    && gem install mailcatcher -v 0.6.5 --no-ri --no-rdoc \
+    && gem install mailcatcher -v 0.7.1 --no-ri --no-rdoc \
     && apk del .build-deps
 
 EXPOSE 1025 1080
